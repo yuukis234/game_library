@@ -1,0 +1,1 @@
+int succ(int i);
