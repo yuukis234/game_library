@@ -1,35 +1,34 @@
-# CMakeのバージョンを設定
+# 本環境
+## CMakeのバージョンを設定
 cmake_minimum_required(VERSION 3.12)
 
-# コンパイラーを指定
+## コンパイラーを指定
 SET( CMAKE_C_COMPILER /usr/bin/clang )
 
-# C言語のフラグを立ててくる
-# ここで必要なライブラリのリンカを貼る
-# SET(CMAKE_C_FLAGS "-lGL -lglfw -lm")
+## C言語のフラグを立ててくる
+## ここで必要なライブラリのリンカを貼る
+## SET(CMAKE_C_FLAGS "-lGL -lglfw -lm")
 SET(INC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
-
-
-# プロジェクト名と使用する言語を設定
+## プロジェクト名と使用する言語を設定
 project(cmake_template C)
 
-# サブディレクトリを追加する
+## サブディレクトリを追加する
 add_subdirectory(lib/unity)
 
-# 共有ライブラリを作成
+## 共有ライブラリを作成
 add_library(succ SHARED src/succ.c)
 
-# 最後の実行ファイルを追加
+## 最後の実行ファイルを追加
 add_executable(test_cmake src/main.c)
 
 
-# shardで生成したライブラリをついか
+## shardで生成したライブラリをついか
 target_link_libraries(test_cmake succ)
 
 
 
-# 以下testのincludeファイル設定
+## 以下test_cmakeのincludeファイル設定
 
 target_include_directories(test_cmake PUBLIC ${INC_DIR})
 
