@@ -33,7 +33,7 @@ target_link_libraries(test_cmake succ)
 target_include_directories(test_cmake PUBLIC ${INC_DIR})
 
 
-# 以上testのincludeファイル設定
+## 以上testのincludeファイル設定
 
 # test関係
 
