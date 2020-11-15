@@ -11,7 +11,7 @@ SET( CMAKE_C_COMPILER /usr/bin/clang )
 SET(INC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
 ## プロジェクト名と使用する言語を設定
-project(cmake_template C)
+project(game_library C)
 
 ## 共有ライブラリを作成
 add_library(succ SHARED src/succ.c)
