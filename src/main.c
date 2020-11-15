@@ -3,7 +3,8 @@
 int main (int argc, char *argv[])
 {
     int i;
+    double n;
     i=atoi(argv[1]);
-    i=succ(i);
-    printf("%d¥n",i);
+    n=succ(i);
+    printf("%f¥n",n);
 }

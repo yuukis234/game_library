@@ -1,4 +1,6 @@
 #include <stdio.h>
-int succ(int i){
-    return i+1;
+#include <math.h>
+
+double succ(int i){
+    return sin(i+1);
 }

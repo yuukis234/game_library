@@ -13,11 +13,11 @@ SET(INC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 ## プロジェクト名と使用する言語を設定
 project(cmake_template C)
 
-## サブディレクトリを追加する
-add_subdirectory(lib/unity)
-
 ## 共有ライブラリを作成
 add_library(succ SHARED src/succ.c)
+
+## mリンカを追加
+target_link_libraries(succ PUBLIC m)
 
 ## 最後の実行ファイルを追加
 add_executable(test_cmake src/main.c)
@@ -36,6 +36,9 @@ target_include_directories(test_cmake PUBLIC ${INC_DIR})
 ## 以上testのincludeファイル設定
 
 # test関係
+
+## サブディレクトリを追加する
+add_subdirectory(lib/unity)
 
 # unityソースを参照
 SET( UNITY_ROOT lib/unity )
@@ -57,6 +60,9 @@ SET(INCLUDE_DIRECTORIES_TEST ${UNITY_ROOT}/src/unity.h)
 
 ## 設定したファイルをコンパイルする
 add_executable(test_service ${TEST_RUNNER_FILES} ${SOURCE_FILESS} ${TEST_FILES} ${UNITY_FILES} ${INCLUDE_DIRECTORIES_TEST})
+
+# mリンカを追加する
+target_link_libraries(test_service PUBLIC m)
 
 ## ヘッダーファイルをincludeする（取り込む）
 target_include_directories(test_service PRIVATE ${UNITY_ROOT}/src ${UNITY_ROOT}/extras/fixture/src ${UNITY_ROOT}/extras/memory/src ${INC_DIR})
