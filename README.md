@@ -1,5 +1,9 @@
 # unityの始め方
 
+git cloneを行った後にunityを使うために以下のコマンドを打ってください。
+
+このコマンドはunityをlibに入れるコマンドです。
+
 ```
 git clone https://github.com/ThrowTheSwitch/Unity.git lib/unity
 ```
